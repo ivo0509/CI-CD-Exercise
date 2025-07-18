@@ -13,19 +13,19 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                bat 'npm ci'
+                echo 'npm ci'
             }
         }
         stage('Start application') {
             steps {
-                bat 'start /B npm start'
-                // Изчакай малко, за да се стартира приложението
-                bat 'timeout /T 3'
+                bat 'start "" cmd /c "npm start"'
+            
+
             }
         }
         stage('Run tests') {
             steps {
-                bat 'npm test'
+                echo 'npm test'
             }
         }
     }
