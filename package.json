@@ -7,11 +7,11 @@
     "node-fetch": "^2.7.0",
     "pug": "^3.0.3"
   },
-  "devDependencies": {
-    "mocha": "^10.7.3"
-  },
   "scripts": {
     "test": "npx mocha tests/*.js",
     "start": "node index.js"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.1"
   }
 }
