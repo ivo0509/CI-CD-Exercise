@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm ci'
             }
         }
         stage('Start application') {
@@ -30,4 +30,4 @@ pipeline {
             }
         }
     }
-} 
+}
