@@ -8,25 +8,24 @@ pipeline {
         }
         stage('Set up Node.js') {
             steps {
-                // Използваш NodeJS plugin в Jenkins
                 tool name: 'NodeJS 18', type: 'nodejs'
             }
         }
         stage('Install dependencies') {
             steps {
-                sh 'npm ci'
+                bat 'npm ci'
             }
         }
         stage('Start application') {
             steps {
-                sh 'nohup npm start &'
+                bat 'start /B npm start'
                 // Изчакай малко, за да се стартира приложението
-                sh 'sleep 3'
+                bat 'timeout /T 3'
             }
         }
         stage('Run tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
     }
